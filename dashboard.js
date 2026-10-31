@@ -123,4 +123,72 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.replace("login.html");
     });
 
+    
+/* ===== DONATION HUB INTERACTIONS ===== */
+
+// Smart donation checklist
+const prepChecks = document.querySelectorAll(".prep-check");
+const progressBar = document.getElementById("checkProgressBar");
+const progressText = document.getElementById("checkProgressText");
+
+function updateChecklist() {
+  const completed = document.querySelectorAll(".prep-check:checked").length;
+  const total = prepChecks.length;
+
+  if (progressBar) {
+    progressBar.style.width =
+      (total ? (completed / total) * 100 : 0) + "%";
+  }
+
+  if (progressText) {
+    progressText.textContent =
+      completed === total
+        ? "All done! Your clothes are ready to donate."
+        : `${completed} of ${total} completed`;
+  }
+}
+
+prepChecks.forEach((checkbox) => {
+  checkbox.addEventListener("change", updateChecklist);
 });
+
+updateChecklist();
+
+// Live donation preview
+const typeInput = document.getElementById("clothingType");
+const quantityInput = document.getElementById("clothingQuantity");
+const conditionInput = document.getElementById("clothingCondition");
+
+function updateDonationPreview() {
+  const type = document.getElementById("previewType");
+  const quantity = document.getElementById("previewQuantity");
+  const condition = document.getElementById("previewCondition");
+
+  if (type && typeInput) {
+    type.textContent = typeInput.value || "Not selected";
+  }
+
+  if (quantity && quantityInput) {
+    const amount = Number(quantityInput.value);
+    quantity.textContent =
+      amount > 0 && Number.isInteger(amount) && amount <= 1000
+        ? `${amount} ${amount === 1 ? "item" : "items"}`
+        : "0 items";
+  }
+
+  if (condition && conditionInput) {
+    condition.textContent = conditionInput.value || "Not selected";
+  }
+}
+
+[typeInput, quantityInput, conditionInput].forEach((field) => {
+  if (field) {
+    field.addEventListener("input", updateDonationPreview);
+    field.addEventListener("change", updateDonationPreview);
+  }
+});
+
+updateDonationPreview();
+
+});
+

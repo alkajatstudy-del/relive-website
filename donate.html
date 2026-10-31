@@ -63,6 +63,71 @@
       </div>
     </section>
 
+    
+<section class="donation-hub" id="donationHub">
+  <div class="donation-hub-heading">
+    <span class="eyebrow">YOUR DONATION JOURNEY</span>
+    <h2>Ready to Give, Ready to Care.</h2>
+    <p>Prepare your clothes before sending them on their next journey.</p>
+  </div>
+
+  <div class="donation-hub-grid">
+    <article class="hub-card">
+      <span class="hub-icon">✓</span>
+      <h3>Smart Donation Checklist</h3>
+      <p>Tick each step as you prepare your donation.</p>
+
+      <label class="check-item">
+        <input type="checkbox" class="prep-check">
+        <span>Clothes are clean and freshly washed</span>
+      </label>
+      <label class="check-item">
+        <input type="checkbox" class="prep-check">
+        <span>Clothes are completely dry</span>
+      </label>
+      <label class="check-item">
+        <input type="checkbox" class="prep-check">
+        <span>Pockets are empty</span>
+      </label>
+      <label class="check-item">
+        <input type="checkbox" class="prep-check">
+        <span>Clothes are packed neatly</span>
+      </label>
+
+      <div class="check-progress">
+        <div class="progress-track">
+          <div id="checkProgressBar"></div>
+        </div>
+        <p id="checkProgressText" aria-live="polite">0 of 4 completed</p>
+      </div>
+    </article>
+
+    <article class="hub-card summary-card">
+      <span class="hub-icon">♻</span>
+      <h3>Your Donation Preview</h3>
+      <p>Your summary updates as you fill in the donation form.</p>
+
+      <div class="summary-row">
+        <span>Clothing type</span>
+        <strong id="previewType">Not selected</strong>
+      </div>
+      <div class="summary-row">
+        <span>Number of items</span>
+        <strong id="previewQuantity">0 items</strong>
+      </div>
+      <div class="summary-row">
+        <span>Condition</span>
+        <strong id="previewCondition">Not selected</strong>
+      </div>
+
+      <a href="#donationFormSection" class="preview-link">
+        Complete Donation Form ↓
+      </a>
+    </article>
+  </div>
+</section>
+
+
     <section id="donationFormSection" class="donation-section">
 
       <div class="donation-layout">

@@ -4,24 +4,36 @@
 #reliveNavbar {
   position: relative;
   z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.relive-navbar,
-.relive-navbar * {
+#reliveNavbar *,
+#reliveNavbar *::before,
+#reliveNavbar *::after {
   box-sizing: border-box;
 }
 
+.relive-announcement {
+  background: #e8f1e8;
+  color: #174b39;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
 .relive-navbar {
+  position: relative;
   width: 100%;
   min-height: 76px;
   padding: 0 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 24px;
   background: #123d32;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
 }
 
@@ -93,10 +105,11 @@
 }
 
 /* Dropdown menu */
+
 .relive-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 8px);
   left: 0;
   width: 290px;
   padding: 9px;
@@ -166,40 +179,101 @@
   color: #174b39;
 }
 
-/* Simple smaller-screen support */
+/* Hamburger button: hidden on desktop */
+
+.relive-mobile-toggle {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 25px;
+  width: 44px;
+  height: 42px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet and mobile */
+
 @media (max-width: 900px) {
   .relive-navbar {
-    padding: 16px 4%;
-    align-items: flex-start;
-    flex-direction: column;
+    min-height: 72px;
+    padding: 14px 5%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
   }
 
+  .relive-mobile-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
   .relive-nav-links {
-    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+    padding: 12px 0 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
-  .relive-dropdown-menu {
-    left: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .relive-nav-links {
-    gap: 4px;
+  .relive-nav-links.mobile-open {
+    display: flex;
   }
 
   .relive-nav-links > a,
   .relive-dropdown-toggle,
   .relive-logout-btn {
-    padding: 9px;
-    font-size: 13px;
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    justify-content: flex-start;
+    padding: 12px 14px;
+    text-align: left;
+  }
+
+  .relive-dropdown {
+    width: 100%;
+  }
+
+  .relive-dropdown-toggle {
+    justify-content: space-between;
   }
 
   .relive-dropdown-menu {
-    width: min(290px, 90vw);
+    position: static;
+    width: 100%;
+    margin-top: 5px;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 480px) {
+  .relive-announcement {
+    font-size: 9px;
+    letter-spacing: 0.7px;
+    padding: 8px 5px;
+  }
+
+  .relive-logo {
+    font-size: 24px;
+  }
+
+  .relive-navbar {
+    padding: 13px 4%;
+  }
+
+  .relive-dropdown-menu a {
+    padding: 10px;
   }
 }
 

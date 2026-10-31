@@ -772,7 +772,9 @@ function footer() {
   }
 
   
+
 root.innerHTML = pages[page]() + footer();
+
 
 
   // Navbar

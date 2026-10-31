@@ -1,8 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   const navbarRoot = document.getElementById("reliveNavbar");
-
-  // Navbar sirf un pages par load hoga jahan placeholder hai.
   if (!navbarRoot) return;
 
   const currentPage =
@@ -18,10 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   navbarRoot.innerHTML = `
+    <div class="relive-announcement">
+      SUSTAINABLE FASHION ✦ GIVE FASHION ANOTHER CHANCE
+    </div>
+
     <header class="relive-navbar">
       <a href="index.html" class="relive-logo" aria-label="RE:LIVE Home">
         RE<span>:</span>LIVE
       </a>
+
+      <button
+        type="button"
+        class="relive-mobile-toggle"
+        id="reliveMobileToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="reliveNavLinks"
+      >☰</button>
 
       <nav class="relive-nav-links" id="reliveNavLinks">
         ${pageLink("index.html", "Home")}
@@ -95,10 +106,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const dropdown = document.getElementById("reliveDropdown");
   const dropdownToggle = document.getElementById("reliveDropdownToggle");
-  const dropdownMenu = document.getElementById("reliveDropdownMenu");
+  const mobileToggle = document.getElementById("reliveMobileToggle");
+  const navLinks = document.getElementById("reliveNavLinks");
   const logoutBtn = document.getElementById("reliveLogoutBtn");
 
-  // Dropdown open/close
+  function closeDropdown() {
+    dropdown.classList.remove("dropdown-open");
+    dropdownToggle.setAttribute("aria-expanded", "false");
+  }
+
   dropdownToggle.addEventListener("click", function (event) {
     event.stopPropagation();
 
@@ -106,24 +122,37 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdownToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Dropdown ko bahar click karne par close karo
+  mobileToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("mobile-open");
+
+    mobileToggle.textContent = isOpen ? "✕" : "☰";
+    mobileToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (!isOpen) closeDropdown();
+  });
+
   document.addEventListener("click", function (event) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove("dropdown-open");
-      dropdownToggle.setAttribute("aria-expanded", "false");
+    if (!dropdown.contains(event.target)) closeDropdown();
+
+    if (
+      !navbarRoot.contains(event.target) &&
+      navLinks.classList.contains("mobile-open")
+    ) {
+      navLinks.classList.remove("mobile-open");
+      mobileToggle.textContent = "☰";
+      mobileToggle.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Escape key se dropdown close karo
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-      dropdown.classList.remove("dropdown-open");
-      dropdownToggle.setAttribute("aria-expanded", "false");
-      dropdownToggle.focus();
+      closeDropdown();
+      navLinks.classList.remove("mobile-open");
+      mobileToggle.textContent = "☰";
+      mobileToggle.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Demo logout
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
       sessionStorage.removeItem("reliveDemoSession");
@@ -131,4 +160,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 

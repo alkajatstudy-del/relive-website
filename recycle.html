@@ -3,34 +3,26 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <title>Recycle Clothes | RELIVE</title>
 
-  <!-- Existing Fashion CSS -->
+  <!-- Page Styling -->
   <link rel="stylesheet" href="fashion.css">
 
-  <!-- Common Navbar CSS -->
+  <!-- Shared Navigation -->
   <link rel="stylesheet" href="navbar.css">
 
-  <!-- Existing Fashion JavaScript -->
+  <!-- Animations -->
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Page Functionality -->
   <script src="fashion.js" defer></script>
 
-  <!-- Common Navbar JavaScript -->
+  <!-- Shared Navigation and Animations -->
   <script src="navbar.js" defer></script>
-
-  
-<link rel="stylesheet" href="fashion.css">
-<link rel="stylesheet" href="navbar.css">
-<link rel="stylesheet" href="animations.css">
-
-<script src="fashion.js" defer></script>
-<script src="navbar.js" defer></script>
-<script src="animations.js" defer></script>
-
-
+  <script src="animations.js" defer></script>
 </head>
+
 
 <body data-page="recycle">
 
@@ -59,6 +51,39 @@
   <!-- Main Content -->
   <main class="container">
 
+    
+<section class="eco-tracker" id="ecoTracker">
+  <p class="eyebrow">SMALL ACTIONS, BIG CHANGE</p>
+  <h2>Your Textile Recycling Impact</h2>
+  <p>Track the clothing items you have sent for responsible recycling.</p>
+
+  <div class="tracker-panel">
+    <label for="recycledCount">Items recycled</label>
+    <div class="tracker-controls">
+      <input
+        type="number"
+        id="recycledCount"
+        min="0"
+        max="10000"
+        value="0"
+        placeholder="Enter number of items"
+      >
+      <button type="button" id="trackImpactBtn">Update Impact</button>
+    </div>
+
+    <p id="impactMessage" aria-live="polite">
+      Every responsible choice counts!
+    </p>
+
+    <div class="impact-progress" aria-label="Recycling progress">
+      <div id="impactProgressBar" class="impact-progress-bar"></div>
+    </div>
+
+    <p><strong id="impactTotal">0</strong> items tracked</p>
+  </div>
+</section>
+
+
     <!-- Introduction -->
     <section class="intro">
 
@@ -77,6 +102,127 @@
 
     <!-- Recycling Guides Section -->
     <section id="explore" class="explore">
+
+      
+<!-- RE:CREATE STUDIO -->
+<section class="recreate-studio" id="recreateStudio">
+  <div class="studio-heading">
+    <p class="eyebrow">REIMAGINE • REWORK • RELOVE</p>
+    <h2>RE:CREATE Studio</h2>
+    <p>Old clothes. Fresh ideas. A new story for every fabric.</p>
+  </div>
+
+  <div class="studio-intro">
+    <span class="studio-sparkle">✳</span>
+    <div>
+      <h3>Make something meaningful.</h3>
+      <p>Choose a project, gather your materials, and give forgotten fabric another chance.</p>
+    </div>
+  </div>
+
+  <div class="studio-filters" aria-label="Filter creative projects">
+    <button type="button" class="studio-filter active" data-studio-filter="all">
+      All Projects
+    </button>
+    <button type="button" class="studio-filter" data-studio-filter="accessories">
+      Accessories
+    </button>
+    <button type="button" class="studio-filter" data-studio-filter="home">
+      Home & Living
+    </button>
+    <button type="button" class="studio-filter" data-studio-filter="clothing">
+      Clothing
+    </button>
+  </div>
+
+  <div id="studioGrid" class="studio-grid"></div>
+
+  <p id="studioEmpty" class="studio-empty" hidden>
+    No projects found in this category.
+  </p>
+
+  <div class="studio-progress">
+    <div>
+      <p class="eyebrow">YOUR CREATIVE JOURNEY</p>
+      <h3>Every little remake counts.</h3>
+    </div>
+    <p><strong id="studioCompletedCount">0</strong> of
+      <strong id="studioTotalCount">3</strong> projects completed
+    </p>
+  </div>
+</section>
+
+<!-- RE:CREATE PROJECT MODAL -->
+<div id="studioModal" class="studio-modal" hidden>
+  <div
+    class="studio-modal-content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="studioModalTitle"
+  >
+    <button
+      type="button"
+      id="studioCloseModal"
+      class="studio-close"
+      aria-label="Close project"
+    >×</button>
+
+    <p class="eyebrow">YOUR NEXT DIY PROJECT</p>
+    <div id="studioModalIcon" class="studio-modal-icon">✂️</div>
+    <span id="studioModalCategory" class="studio-tag"></span>
+    <h2 id="studioModalTitle">Project title</h2>
+    <p id="studioModalDescription"></p>
+
+    <h3>What You'll Need</h3>
+    <ul id="studioModalMaterials"></ul>
+
+    <h3>Let's Make It</h3>
+    <ol id="studioModalSteps"></ol>
+
+    <button
+      type="button"
+      id="studioCompleteBtn"
+      class="studio-complete-btn"
+    >✓ Mark as Completed</button>
+
+    <p id="studioModalStatus" class="studio-modal-status" aria-live="polite"></p>
+  </div>
+</div>
+<!-- END RE:CREATE STUDIO -->
+
+
+      
+<section class="material-finder" id="materialFinder">
+  <p class="eyebrow">FIND THE RIGHT NEXT STEP</p>
+  <h2>What Is Your Fabric Made Of?</h2>
+  <p>Select a material to explore responsible recycling options.</p>
+
+  <div class="material-options">
+    <label for="fabricType">Choose your fabric</label>
+    <select id="fabricType">
+      <option value="">Select a material</option>
+      <option value="cotton">Cotton</option>
+      <option value="denim">Denim / Jeans</option>
+      <option value="polyester">Polyester</option>
+      <option value="wool">Wool</option>
+      <option value="blend">Mixed / Blended Fabric</option>
+    </select>
+
+    <button type="button" id="findMaterialBtn">
+      Find Recycling Tips
+    </button>
+  </div>
+
+  <div id="materialResult" class="material-result" hidden>
+    <h3 id="materialTitle"></h3>
+    <p id="materialDescription"></p>
+    <ul id="materialTips"></ul>
+    <p class="material-note">
+      Always check your local textile collector's accepted materials.
+    </p>
+  </div>
+</section>
+
 
       <div class="section-heading">
 
