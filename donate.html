@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Clothes | RE:LIVE</title>
+
+  <link rel="stylesheet" href="donate.css">
+  <link rel="stylesheet" href="navbar.css">
+
+  <script src="donate.js" defer></script>
+  <script src="navbar.js" defer></script>
+</head>
+
+<body data-page="donate">
+
+  <div id="reliveNavbar"></div>
+
+  <section class="donate-hero">
+    <div class="hero-content">
+      <span class="eyebrow">GIVE FASHION ANOTHER CHANCE</span>
+      <h1>Give Your Clothes<br><em>A Second Life.</em></h1>
+      <p>
+        Your unused clothes can make a difference.
+        Donate wearable garments and help reduce textile waste.
+      </p>
+      <a href="#donationFormSection" class="hero-button">
+        Donate Now ↓
+      </a>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="donate-intro">
+      <span class="eyebrow">SMALL ACTIONS, BIG IMPACT</span>
+      <h2>Why Donate With RE:LIVE?</h2>
+      <p>
+        Instead of throwing away clothes, give them another chance
+        to be useful. Every donation is a step towards a more
+        sustainable future.
+      </p>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <div class="benefit-icon">🌱</div>
+          <h3>Reduce Waste</h3>
+          <p>Keep reusable clothing out of landfills.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Help Others</h3>
+          <p>Give wearable clothes a chance to be reused.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon">♻️</div>
+          <h3>Choose Sustainability</h3>
+          <p>Support responsible fashion habits.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="donationFormSection" class="donation-section">
+
+      <div class="donation-layout">
+
+        <div class="donation-info">
+          <span class="eyebrow">YOUR DONATION MATTERS</span>
+          <h2>Share What You No Longer Wear.</h2>
+          <p>
+            Fill in your details and tell us about the clothes
+            you'd like to donate.
+          </p>
+
+          <div class="donation-steps">
+            <div class="step-item">
+              <span>01</span>
+              <div>
+                <h3>Enter Your Details</h3>
+                <p>Provide your name and contact information.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <span>02</span>
+              <div>
+                <h3>Describe Your Clothes</h3>
+                <p>Select clothing type, condition and quantity.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <span>03</span>
+              <div>
+                <h3>Submit Your Request</h3>
+                <p>Save your donation request for review.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="donation-note">
+            <strong>Before donating</strong>
+            <p>
+              Please make sure your clothes are clean, dry
+              and in reusable condition.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-card">
+
+          <div id="formContent">
+            <span class="eyebrow">DONATION FORM</span>
+            <h2>Make a Donation</h2>
+            <p class="form-subtitle">
+              Complete the form to register your clothing donation.
+            </p>
+
+            <form id="donationForm">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="donorName">Full Name *</label>
+                  <input
+                    type="text"
+                    id="donorName"
+                    placeholder="Enter your full name"
+                    maxlength="100"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="donorEmail">Email Address *</label>
+                  <input
+                    type="email"
+                    id="donorEmail"
+                    placeholder="Enter your email"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="donorPhone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="donorPhone"
+                    placeholder="10-digit mobile number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    title="Enter a 10-digit phone number"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="clothingType">Clothing Type *</label>
+                  <select id="clothingType" required>
+                    <option value="">Select clothing type</option>
+                    <option value="Shirts">Shirts</option>
+                    <option value="T-Shirts">T-Shirts</option>
+                    <option value="Jeans">Jeans</option>
+                    <option value="Dresses">Dresses</option>
+                    <option value="Traditional Wear">Traditional Wear</option>
+                    <option value="Kids Clothing">Kids Clothing</option>
+                    <option value="Winter Wear">Winter Wear</option>
+                    <option value="Mixed Clothing">Mixed Clothing</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clothingQuantity">Quantity *</label>
+                  <input
+                    type="number"
+                    id="clothingQuantity"
+                    placeholder="Number of items"
+                    min="1"
+                    max="1000"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="clothingCondition">Clothing Condition *</label>
+                  <select id="clothingCondition" required>
+                    <option value="">Select condition</option>
+                    <option value="New">New</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="donorAddress">Pickup Address *</label>
+                <textarea
+                  id="donorAddress"
+                  rows="3"
+                  maxlength="500"
+                  placeholder="Enter your address"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="donationNotes">Additional Notes (Optional)</label>
+                <textarea
+                  id="donationNotes"
+                  rows="3"
+                  maxlength="1000"
+                  placeholder="Anything else we should know?"
+                ></textarea>
+              </div>
+
+              <label class="checkbox-row">
+                <input type="checkbox" id="donationConsent" required>
+                <span>
+                  I confirm that the details are correct and
+                  the clothes are suitable for donation.
+                </span>
+              </label>
+
+              <p id="formError" class="form-error" role="alert" hidden></p>
+
+              <button type="submit" class="submit-btn" id="submitDonationBtn">
+                Submit Donation
+              </button>
+
+            </form>
+          </div>
+
+          <div id="successMessage" class="success-message" hidden>
+            <div class="success-icon">✓</div>
+            <h2>Donation Submitted!</h2>
+            <p>
+              Your donation request has been saved successfully
+              for the RE:LIVE project demo.
+            </p>
+            <p class="reference-label">Your Donation Reference</p>
+            <strong id="donationReference"></strong>
+
+            <div class="success-actions">
+              <a href="my-donations.html" class="view-btn">
+                View My Donations
+              </a>
+              <button type="button" id="donateAgainBtn" class="again-btn">
+                Donate Again
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <span class="eyebrow">MAKE A DIFFERENCE</span>
+      <h2>Every Garment Deserves Another Chance.</h2>
+      <p>Reuse more. Waste less. Give generously.</p>
+      <a href="my-donations.html">Track Your Donations →</a>
+    </section>
+
+  </main>
+
+  <footer class="donate-footer">
+    <h2>RE<span>:</span>LIVE</h2>
+    <p>Give Fashion Another Chance</p>
+    <p>Reuse • Repair • Recycle • Donate</p>
+    <small>© 2026 RELIVE. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>

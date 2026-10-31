@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sign Up | RELIVE</title>
+
+  <!-- Signup Page CSS -->
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Signup JavaScript -->
+  <script src="auth.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="auth.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="auth.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+
+</head>
+
+<body data-page="signup">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Signup Section -->
+  <main class="auth-container">
+
+    <div class="auth-card">
+
+      <p class="eyebrow">
+        JOIN THE MOVEMENT
+      </p>
+
+      <h1>Create Account</h1>
+
+      <p class="subtitle">
+        Give fashion another chance with RELIVE.
+      </p>
+
+      <!-- Signup Form -->
+      <form id="signupForm">
+
+        <label for="signupName">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="signupName"
+          name="name"
+          placeholder="Enter full name"
+          autocomplete="name"
+          required
+        >
+
+        <label for="signupEmail">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          id="signupEmail"
+          name="email"
+          placeholder="Enter email"
+          autocomplete="email"
+          required
+        >
+
+        <label for="signupPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="signupPassword"
+          name="password"
+          placeholder="Minimum 6 characters"
+          minlength="6"
+          autocomplete="new-password"
+          required
+        >
+
+        <label for="confirmPassword">
+          Confirm Password
+        </label>
+
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm password"
+          autocomplete="new-password"
+          required
+        >
+
+        <!-- Signup Error Message -->
+        <p
+          id="signupError"
+          class="error-message"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          Create Account
+        </button>
+
+      </form>
+
+      <!-- Login Link -->
+      <p class="switch-text">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>

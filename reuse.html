@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reuse Clothes | RELIVE</title>
+
+  <!-- Existing Fashion CSS -->
+  <link rel="stylesheet" href="fashion.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Existing Fashion JavaScript -->
+  <script src="fashion.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="fashion.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="fashion.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+</head>
+
+<body data-page="reuse">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Reuse Hero Section -->
+  <section class="hero reuse-hero">
+
+    <p class="eyebrow">
+      REIMAGINE YOUR WARDROBE
+    </p>
+
+    <h1>Reuse. Restyle. Relove.</h1>
+
+    <p>
+      Transform old clothes into something beautiful and useful.
+    </p>
+
+    <a href="#explore" class="hero-btn">
+      Explore Reuse Ideas
+    </a>
+
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Introduction -->
+    <section class="intro">
+
+      <p class="eyebrow">
+        CREATIVE SUSTAINABILITY
+      </p>
+
+      <h2>Give Your Clothes a New Purpose</h2>
+
+      <p>
+        Discover practical DIY projects that help reduce textile waste.
+      </p>
+
+    </section>
+
+    <!-- Reuse Ideas -->
+    <section id="explore" class="explore">
+
+      <div class="section-heading">
+
+        <h2>Explore Reuse Ideas</h2>
+
+        <p>
+          Choose an idea and follow the instructions.
+        </p>
+
+      </div>
+
+      <!-- Search and Category Filter -->
+      <div class="controls">
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search reuse ideas..."
+          aria-label="Search reuse ideas"
+        >
+
+        <select
+          id="categoryFilter"
+          aria-label="Filter reuse ideas by category"
+        >
+          <option value="all">All Categories</option>
+          <option value="clothing">Clothing</option>
+          <option value="accessories">Accessories</option>
+          <option value="home">Home Decor</option>
+        </select>
+
+      </div>
+
+      <!-- JavaScript Generates Reuse Cards Here -->
+      <div id="ideasGrid" class="ideas-grid"></div>
+
+      <!-- No Results Message -->
+      <p id="emptyState" class="empty-state" hidden>
+        No matching ideas found.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Tutorial Guide Popup -->
+  <div id="guideModal" class="modal" hidden>
+
+    <div
+      class="modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <button
+        id="closeModal"
+        class="close-modal"
+        type="button"
+        aria-label="Close guide"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        STEP-BY-STEP GUIDE
+      </p>
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDescription"></p>
+
+      <h3>What You'll Need</h3>
+
+      <ul id="modalMaterials"></ul>
+
+      <h3>How To Do It</h3>
+
+      <ol id="modalSteps"></ol>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+
+    <h2>RE<span>:</span>LIVE</h2>
+
+    <p>Give Fashion Another Chance</p>
+
+    <p>© 2026 RELIVE</p>
+
+  </footer>
+
+</body>
+</html>
+
+

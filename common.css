@@ -1,0 +1,166 @@
+
+/* RELIVE Shared Integration Styles */
+
+:root {
+  --relive-green: #183b30;
+  --relive-dark: #102b23;
+  --relive-cream: #f8f5ed;
+  --relive-gold: #d6ad6b;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Shared Navbar */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(248, 245, 237, 0.98);
+}
+
+.navbar {
+  min-height: 75px;
+}
+
+.nav-links a {
+  white-space: nowrap;
+}
+
+.nav-links a.active:not(.nav-btn) {
+  color: #ad8550;
+}
+
+.nav-links .nav-btn {
+  background: var(--relive-green);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 3px;
+}
+
+/* Shared Login / Account Button */
+.relive-account-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--relive-green);
+  color: white !important;
+  padding: 12px 18px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.relive-account-link:hover {
+  background: #2c604c;
+}
+
+/* Image fallback */
+.relive-image-fallback {
+  background: linear-gradient(135deg, #e8e0d0, #d5e0d5);
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  color: var(--relive-green);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.relive-image-fallback span {
+  display: block;
+  max-width: 260px;
+}
+
+.relive-image-fallback[hidden] {
+  display: none !important;
+}
+
+/* Better keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--relive-gold);
+  outline-offset: 3px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 900px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    border: none;
+    background: transparent;
+    color: var(--relive-green);
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: var(--relive-cream);
+    padding: 25px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    box-shadow: 0 15px 25px #00000015;
+    z-index: 1001;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .relive-account-link {
+    width: 100%;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo {
+    font-size: 28px;
+  }
+
+  .relive-account-link {
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,90 @@
+
+/* ======================================
+   RE:LIVE - Premium Website Animations
+   ====================================== */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Reveal animation */
+  .relive-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.75s ease,
+      transform 0.75s ease;
+  }
+
+  .relive-reveal.relive-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Card hover effect */
+  .info-card,
+  .r-card,
+  .stat-card,
+  .action-card,
+  .objective {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .info-card:hover,
+  .r-card:hover,
+  .stat-card:hover,
+  .action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Button hover effect */
+  .btn,
+  .btn-gold,
+  .submit-btn,
+  .hero-btn,
+  .contact-btn {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .btn:hover,
+  .btn-gold:hover,
+  .submit-btn:hover,
+  .hero-btn:hover,
+  .contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  }
+
+}
+
+/* Accessible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #c9a44c;
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .relive-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

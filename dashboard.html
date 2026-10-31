@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Dashboard | RELIVE</title>
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Authentication JavaScript -->
+  <script src="auth.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="auth.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="auth.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+
+</head>
+
+<body data-page="dashboard">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Dashboard Main Section -->
+  <main class="user-dashboard">
+
+    <p class="eyebrow">
+      MY RELIVE ACCOUNT
+    </p>
+
+    <h1 id="welcomeUser">
+      Welcome!
+    </h1>
+
+    <p>
+      What would you like to do today?
+    </p>
+
+    <!-- Dashboard Feature Cards -->
+    <div class="dashboard-grid">
+
+      <!-- My Donations -->
+      <a
+        href="my-donations.html"
+        class="feature-card"
+      >
+        <span>📦</span>
+
+        <h2>My Donations</h2>
+
+        <p>
+          Track your submitted clothing donations
+          and their status.
+        </p>
+      </a>
+
+      <!-- Reuse Clothes -->
+      <a
+        href="reuse.html"
+        class="feature-card"
+      >
+        <span>♻️</span>
+
+        <h2>Reuse Clothes</h2>
+
+        <p>
+          Discover creative ways to reuse fashion.
+        </p>
+      </a>
+
+      <!-- Repair Clothes -->
+      <a
+        href="repair.html"
+        class="feature-card"
+      >
+        <span>✂️</span>
+
+        <h2>Repair Clothes</h2>
+
+        <p>
+          Extend the life of your favourite outfits.
+        </p>
+      </a>
+
+      <!-- Recycle Clothes -->
+      <a
+        href="recycle.html"
+        class="feature-card"
+      >
+        <span>🌿</span>
+
+        <h2>Recycle Clothes</h2>
+
+        <p>
+          Explore sustainable recycling options.
+        </p>
+      </a>
+
+    </div>
+
+    <!-- Existing Logout Button -->
+    <div class="dashboard-actions">
+      <button
+        id="logoutBtn"
+        type="button"
+        class="logout-btn"
+      >
+        Logout
+      </button>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

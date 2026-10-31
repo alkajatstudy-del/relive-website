@@ -1,0 +1,54 @@
+
+/* RELIVE Auto Images */
+
+.relive-auto-photo {
+  width: 100%;
+  min-height: 340px;
+  background-color: #e9e1d3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  box-shadow: 0 20px 45px rgba(16, 43, 35, 0.15);
+}
+
+/* Existing hero image styling */
+.hero img,
+.hero-section img,
+.donate-hero img,
+.reuse-hero img,
+.repair-hero img,
+.page-hero img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* If image was appended directly inside a
+   hero without a grid, avoid full overflow */
+.hero > .relive-auto-photo,
+.hero-section > .relive-auto-photo {
+  max-width: 1100px;
+  width: 90%;
+  margin: 25px auto;
+}
+
+/* Two-column hero layouts */
+.hero-grid > .relive-auto-photo,
+.hero-container > .relive-auto-photo,
+.hero-inner > .relive-auto-photo {
+  align-self: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .relive-auto-photo {
+    min-height: 260px;
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .relive-auto-photo {
+    min-height: 220px;
+  }
+}

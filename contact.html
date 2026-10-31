@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | RELIVE</title>
+
+  <!-- Contact Page CSS -->
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Contact Page JavaScript -->
+  <script src="contact.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="contact.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="contact.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+
+</head>
+
+<body data-page="contact">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <p class="eyebrow">
+      WE'D LOVE TO HEAR FROM YOU
+    </p>
+
+    <h1>Get in Touch</h1>
+
+    <p>
+      Have a question, suggestion or feedback?
+      We're here to listen and help you on your
+      sustainable fashion journey.
+    </p>
+
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <div class="contact-grid">
+
+      <!-- Contact Information -->
+      <section class="contact-info">
+
+        <p class="eyebrow">
+          CONNECT WITH RELIVE
+        </p>
+
+        <h2>
+          Let's Make Fashion More Sustainable.
+        </h2>
+
+        <p class="info-description">
+          Whether you want to learn more about clothing reuse,
+          repair, recycling or donation, we'd love to hear from you.
+        </p>
+
+        <div class="info-item">
+
+          <div class="info-icon">✉</div>
+
+          <div>
+            <h3>Email Support</h3>
+
+            <p>
+              Send us a message using the contact form.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-icon">🌱</div>
+
+          <div>
+            <h3>Our Mission</h3>
+
+            <p>
+              Promoting sustainable fashion and
+              reducing textile waste.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-icon">♡</div>
+
+          <div>
+            <h3>Join Our Movement</h3>
+
+            <p>
+              Give fashion another chance with RELIVE.
+            </p>
+          </div>
+
+        </div>
+
+        <a href="about.html" class="about-link">
+          Learn More About Us →
+        </a>
+
+      </section>
+
+      <!-- Contact Form Card -->
+      <section class="form-card">
+
+        <div id="formContent">
+
+          <p class="eyebrow">
+            SEND A MESSAGE
+          </p>
+
+          <h2>Contact Us</h2>
+
+          <p class="form-description">
+            Fill out the form below and share your message.
+          </p>
+
+          <!-- Contact Form -->
+          <form id="contactForm">
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="contactName">
+                  Full Name *
+                </label>
+
+                <input
+                  type="text"
+                  id="contactName"
+                  placeholder="Your full name"
+                  maxlength="100"
+                  required
+                >
+
+              </div>
+
+              <div class="form-group">
+
+                <label for="contactEmail">
+                  Email Address *
+                </label>
+
+                <input
+                  type="email"
+                  id="contactEmail"
+                  placeholder="Your email"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="contactSubject">
+                Subject *
+              </label>
+
+              <select
+                id="contactSubject"
+                required
+              >
+
+                <option value="">
+                  Select a subject
+                </option>
+
+                <option value="Donation Enquiry">
+                  Donation Enquiry
+                </option>
+
+                <option value="Reuse & Repair">
+                  Reuse & Repair
+                </option>
+
+                <option value="Recycling">
+                  Recycling
+                </option>
+
+                <option value="Feedback">
+                  Feedback
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="contactMessage">
+                Your Message *
+              </label>
+
+              <textarea
+                id="contactMessage"
+                rows="6"
+                maxlength="2000"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+
+            </div>
+
+            <button
+              type="submit"
+              class="submit-btn"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- Success Message -->
+        <div
+          id="successMessage"
+          class="success-message"
+          hidden
+        >
+
+          <div class="success-icon">✓</div>
+
+          <h2>Message Saved!</h2>
+
+          <p>
+            Your message has been saved in this browser
+            for the RELIVE project demo.
+          </p>
+
+          <p id="messageReference"></p>
+
+          <button
+            id="sendAnotherBtn"
+            class="submit-btn"
+            type="button"
+          >
+            Send Another Message
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Bottom Call to Action -->
+  <section class="bottom-cta">
+
+    <h2>
+      Small Actions. Meaningful Impact.
+    </h2>
+
+    <p>
+      Join RELIVE and give your clothes a second chance.
+    </p>
+
+    <a href="donate.html">
+      Donate Clothes
+    </a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+    <h2>RE<span>:</span>LIVE</h2>
+
+    <p>Give Fashion Another Chance</p>
+
+    <p>
+      © 2026 RELIVE. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+
+</html>

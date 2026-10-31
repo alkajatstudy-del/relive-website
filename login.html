@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | RELIVE</title>
+
+  <!-- Login Page CSS -->
+  <link rel="stylesheet" href="auth.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Login JavaScript -->
+  <script src="auth.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="auth.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="auth.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+
+</head>
+
+<body data-page="login">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Login Section -->
+  <main class="auth-container">
+
+    <div class="auth-card">
+
+      <p class="eyebrow">
+        WELCOME BACK
+      </p>
+
+      <h1>Login to RELIVE</h1>
+
+      <p class="subtitle">
+        Continue your sustainable fashion journey.
+      </p>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+
+        <label for="loginEmail">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          id="loginEmail"
+          name="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        >
+
+        <label for="loginPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="loginPassword"
+          name="password"
+          placeholder="Enter password"
+          autocomplete="current-password"
+          required
+        >
+
+        <!-- Error Message -->
+        <p
+          id="loginError"
+          class="error-message"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          Login
+        </button>
+
+      </form>
+
+      <!-- Signup Link -->
+      <p class="switch-text">
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+      </p>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>

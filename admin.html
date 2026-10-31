@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | RELIVE</title>
+
+  <!-- Admin Dashboard CSS -->
+  <link rel="stylesheet" href="admin.css">
+
+  <!-- Common Navbar CSS -->
+  <link rel="stylesheet" href="navbar.css">
+
+  <!-- Admin Dashboard JavaScript -->
+  <script src="admin.js" defer></script>
+
+  <!-- Common Navbar JavaScript -->
+  <script src="navbar.js" defer></script>
+
+  
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="animations.css">
+
+<script src="admin.js" defer></script>
+<script src="navbar.js" defer></script>
+<script src="animations.js" defer></script>
+
+
+</head>
+
+<body data-page="admin">
+
+  <!-- Common RE:LIVE Navbar -->
+  <div id="reliveNavbar"></div>
+
+  <!-- Admin Dashboard Layout -->
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <a href="index.html" class="logo">
+        RE<span>:</span>LIVE
+      </a>
+
+      <p class="sidebar-subtitle">
+        ADMIN PANEL
+      </p>
+
+      <nav class="sidebar-nav">
+
+        <button
+          type="button"
+          class="nav-btn active"
+          data-section="overview"
+        >
+          <span>▦</span>
+          Overview
+        </button>
+
+        <button
+          type="button"
+          class="nav-btn"
+          data-section="donations"
+        >
+          <span>♡</span>
+          Manage Donations
+        </button>
+
+        <button
+          type="button"
+          class="nav-btn"
+          data-section="messages"
+        >
+          <span>✉</span>
+          Contact Messages
+
+          <span
+            id="sidebarUnread"
+            class="unread-badge"
+          >
+            0
+          </span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a href="index.html">
+          ← Back to Website
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Admin Content -->
+    <main class="main-content">
+
+      <!-- Admin Topbar -->
+      <header class="topbar">
+
+        <div>
+          <p class="eyebrow">
+            RELIVE ADMINISTRATION
+          </p>
+
+          <h1 id="pageTitle">
+            Dashboard Overview
+          </h1>
+        </div>
+
+        <div class="admin-avatar">A</div>
+
+      </header>
+
+      <!-- Overview Section -->
+      <section
+        id="overviewSection"
+        class="page-section"
+      >
+
+        <div class="welcome-card">
+
+          <div>
+            <p class="eyebrow">
+              WELCOME TO RELIVE
+            </p>
+
+            <h2>
+              Manage Your Sustainable Impact
+            </h2>
+
+            <p>
+              Track clothing donations and respond to
+              contact messages from one place.
+            </p>
+          </div>
+
+          <div class="welcome-icon">🌿</div>
+
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+
+          <article class="stat-card">
+            <p>Total Donations</p>
+            <h2 id="totalDonations">0</h2>
+            <span>Submitted requests</span>
+          </article>
+
+          <article class="stat-card">
+            <p>Pending Donations</p>
+            <h2 id="pendingDonations">0</h2>
+            <span>Waiting for review</span>
+          </article>
+
+          <article class="stat-card">
+            <p>Approved Donations</p>
+            <h2 id="approvedDonations">0</h2>
+            <span>Accepted requests</span>
+          </article>
+
+          <article class="stat-card">
+            <p>Total Clothes</p>
+            <h2 id="totalClothes">0</h2>
+            <span>Items submitted</span>
+          </article>
+
+          <article class="stat-card">
+            <p>Contact Messages</p>
+            <h2 id="totalMessages">0</h2>
+            <span>Messages received</span>
+          </article>
+
+          <article class="stat-card">
+            <p>Unread Messages</p>
+            <h2 id="unreadMessages">0</h2>
+            <span>Require attention</span>
+          </article>
+
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+
+          <h2>Quick Actions</h2>
+
+          <div class="quick-action-grid">
+
+            <button
+              id="openDonationsBtn"
+              class="action-card"
+              type="button"
+            >
+              <span>♡</span>
+              <strong>Manage Donations</strong>
+              <small>
+                Review submitted clothing donations
+              </small>
+            </button>
+
+            <button
+              id="openMessagesBtn"
+              class="action-card"
+              type="button"
+            >
+              <span>✉</span>
+              <strong>Contact Messages</strong>
+              <small>
+                Read messages and enquiries
+              </small>
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Donations Section -->
+      <section
+        id="donationsSection"
+        class="page-section"
+        hidden
+      >
+
+        <div class="section-header">
+
+          <div>
+            <h2>Donation Management</h2>
+            <p>
+              Review and manage submitted donation requests.
+            </p>
+          </div>
+
+          <button
+            id="refreshDonationsBtn"
+            class="refresh-btn"
+            type="button"
+          >
+            Refresh
+          </button>
+
+        </div>
+
+        <!-- Donation Filters -->
+        <div class="filter-bar">
+
+          <input
+            type="search"
+            id="donationSearch"
+            placeholder="Search name, email, ID or clothing type"
+            aria-label="Search donations"
+          >
+
+          <select
+            id="donationStatusFilter"
+            aria-label="Filter donations by status"
+          >
+            <option value="All">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+
+        </div>
+
+        <!-- Donations Table -->
+        <div class="table-wrapper">
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Donation ID</th>
+                <th>Donor</th>
+                <th>Clothing</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="donationsTableBody"></tbody>
+
+          </table>
+
+        </div>
+
+        <p
+          id="donationsEmpty"
+          class="empty-text"
+          hidden
+        >
+          No donations found.
+        </p>
+
+      </section>
+
+      <!-- Contact Messages Section -->
+      <section
+        id="messagesSection"
+        class="page-section"
+        hidden
+      >
+
+        <div class="section-header">
+
+          <div>
+            <h2>Contact Messages</h2>
+            <p>
+              Read and manage enquiries sent through RELIVE.
+            </p>
+          </div>
+
+          <button
+            id="refreshMessagesBtn"
+            class="refresh-btn"
+            type="button"
+          >
+            Refresh
+          </button>
+
+        </div>
+
+        <!-- Message Statistics -->
+        <div class="message-stats">
+
+          <div>
+            <span>Total Messages</span>
+            <strong id="messagesTotalCount">0</strong>
+          </div>
+
+          <div>
+            <span>New Messages</span>
+            <strong id="messagesNewCount">0</strong>
+          </div>
+
+          <div>
+            <span>Read Messages</span>
+            <strong id="messagesReadCount">0</strong>
+          </div>
+
+        </div>
+
+        <!-- Message Filters -->
+        <div class="filter-bar">
+
+          <input
+            type="search"
+            id="messageSearch"
+            placeholder="Search sender, email, subject or message"
+            aria-label="Search contact messages"
+          >
+
+          <select
+            id="messageStatusFilter"
+            aria-label="Filter messages by status"
+          >
+            <option value="All">All Messages</option>
+            <option value="New">New</option>
+            <option value="Read">Read</option>
+          </select>
+
+        </div>
+
+        <!-- Messages List -->
+        <div
+          id="messagesList"
+          class="messages-list"
+        ></div>
+
+        <!-- Empty State -->
+        <div
+          id="messagesEmpty"
+          class="empty-state"
+          hidden
+        >
+          <div class="empty-icon">✉</div>
+
+          <h3>No Messages Found</h3>
+
+          <p>
+            Messages submitted through the Contact Us page
+            will appear here.
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Message Details Modal -->
+  <div
+    id="messageModal"
+    class="modal"
+    hidden
+  >
+
+    <div
+      class="modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalSubject"
+    >
+
+      <button
+        id="closeMessageModal"
+        class="modal-close"
+        type="button"
+        aria-label="Close message"
+      >
+        ×
+      </button>
+
+      <p class="eyebrow">
+        CONTACT ENQUIRY
+      </p>
+
+      <h2 id="modalSubject">
+        Message Details
+      </h2>
+
+      <div id="modalMessageDetails"></div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
